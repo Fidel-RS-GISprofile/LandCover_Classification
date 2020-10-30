@@ -33,7 +33,7 @@ params <- c(5, # radius of smoothing (pixels) ||3 for Landsat or 5 for Sentinel 
 #||Apply KMEAN shift algorith to raster band to do clustering
 system(sprintf("otbcli_MeanShiftSmoothing -in %s -fout %s -foutpos %s -spatialr %s -ranger %s -thres %s -maxiter %s",
                "ug500_2019ls8_5bands.tif",
-               paste0(tmpdir,"tmp_smooth_",paste0(params,collapse = "_"),".tif"),
+               paste0(tmpdir,"smooth_",paste0(params,collapse = "_"),".tif"),
                paste0(tmpdir,"tmp_position_",paste0(params,collapse = "_"),".tif"),
                params[1],
                params[2],
@@ -42,28 +42,16 @@ system(sprintf("otbcli_MeanShiftSmoothing -in %s -fout %s -foutpos %s -spatialr 
 ))
 #||Generated segments and tiles
 system(sprintf("otbcli_LSMSSegmentation -in %s -inpos %s -out %s -spatialr %s -ranger %s -minsize 0 -tmpdir %s -tilesizex 1024 -tilesizey 1024",
-               paste0(tmpdir,"tmp_smooth_",paste0(params,collapse = "_"),".tif"),
+               paste0(tmpdir,"smooth_",paste0(params,collapse = "_"),".tif"),
                paste0(tmpdir,"tmp_position_",paste0(params,collapse = "_"),".tif"),
-               paste0(tmpdir,"tmp_seg_lsms_",paste0(params,collapse = "_"),".tif"),
+               paste0(segt_dir,"tmp_seg_lsms_",paste0(params,collapse = "_"),".tif"),
                params[1],
                params[2],
                tmpdir
 ))
-#||Merge all generated segment tiles
-system(sprintf("otbcli_LSMSSmallRegionsMerging -in %s -inseg %s -out %s -minsize %s -tilesizex 1024 -tilesizey 1024",
-               paste0(tmpdir,"tmp_smooth_",paste0(params,collapse = "_"),".tif"),
-               paste0(tmpdir,"tmp_seg_lsms_",paste0(params,collapse = "_"),".tif"),
-               paste0(segt_dir,"seg_lsms_",paste0(params,collapse = "_"),".tif"),
-               params[5]
-))
+
 #||Remove temporary files
 system(sprintf("rm %s",
                paste0(tmpdir,"tmp*.tif")
 ))
-
-#||Polygonise ===Apply only when polygon segments are required
-#system(sprintf("gdal_polygonize.py -f \"ESRI Shapefile\" %s %s",
-#               paste0("seg_lsms_btm",paste0(params,collapse = "_"),".tif"),
-#               paste0("seg_lsms_btm",paste0(params,collapse = "_"),".shp")
-#))
 print("***** Segmentaion complete *****")#||Notice for completion of the segmentation process
