@@ -7,9 +7,8 @@ rm(list = ls()); cat("\014")
 
 # Load library
 library(raster)
-library(foreign)
 library(rgdal)
-library(tiff)
+library(rpanel)
 
 # Working directory 
 workdir <- "C:/Users/F1User/Desktop/work/"
@@ -18,13 +17,33 @@ tmp_dir         <- "tmp/" # Auto create a tmp directory
 if (!dir.exists(tmp_dir))
   dir.create(tmp_dir) 
 
+# Define raster options
+rasterOptions(datatype = 'INT1U', progress = 'window', 
+              timer = T, chunksize = 1e+07, tmpdir = tmp_dir,
+              maxmemory = 1e+08, tmptime = 24)
+
 # Load images
 img_LULC      <- "progress/lc2019UGA_500mBuffer.tif"
 img_LULC      <- raster(img_LULC)
 img_Edited    <- "lc2019UGA_500mBuffer_Edit1.tif"
 
+# Load mask layer(s)
 EditClass_msk <- "editDEMO/12to9.tif"
 EditClass_msk <- raster(EditClass_msk)
+# EditClass_msk1 <- "E:/tmp_aug2020/editing_masks/8to5_1.tif"
+# EditClass_msk1 <- raster(EditClass_msk1)
+# EditClass_msk2 <- "E:/tmp_aug2020/editing_masks/8to7_8.tif"
+# EditClass_msk2 <- raster(EditClass_msk2)
+# EditClass_msk3 <- "E:/tmp_aug2020/editing_masks/8to7_9.tif"
+# EditClass_msk3 <- raster(EditClass_msk3)
+# EditClass_msk4 <- "E:/tmp_aug2020/editing_masks/8to7_10.tif"
+# EditClass_msk4 <- raster(EditClass_msk4)
+# EditClass_msk5 <- "E:/tmp_aug2020/editing_masks/8to7_10.tif"
+# EditClass_msk5 <- raster(EditClass_msk5)
+
+panel <- rp.control(title = "Progess Message. . .", size = c(500, 50))
+rp.text(panel, "Editing raster. . .", font="Arial", pos = c(10, 10), 
+        title = 'bottom', name = 'prog_panel')
 
 # Assign class areas in Landcover to corresponding edit classes in the mask 
 #(Class ID as integers)
@@ -44,3 +63,6 @@ img_LULC[EditClass_msk == 13 ] <- as.integer(13) # Edit class 13_Impediment
 
 # Save edited raster
 writeRaster(img_LULC, img_Edited)
+rp.control.dispose(panel)
+removeTmpFiles(h=0)
+print("*********COMPLETE**********")
