@@ -22,9 +22,9 @@ img_compressed <- writeRaster(input_tif, img_out, datatype="INT4U",
                               options = tif_options, overwrite = FALSE)
 
 # Compress::: Option 2.(for conerting final classification to byte)
-system(sprintf("gdal_translate -ot Byte -co COMPRESS=LZW %s %s",
-               paste0(workdir,img),
-               paste0(workdir,img_out)
-))
+# system(sprintf("gdal_translate -ot Byte -co COMPRESS=LZW %s %s",
+#                paste0(workdir,img),
+#                paste0(workdir,img_out)
+# ))
 
 cat(paste("Finished processing", "at", format(Sys.time(), "%H:%M:%OS2")))

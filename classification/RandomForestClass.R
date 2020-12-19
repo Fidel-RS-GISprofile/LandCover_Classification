@@ -41,7 +41,7 @@ cores <- detectCores()
 ######################## RASTER OPTIONS AND PARAMETERS ###############################
 rasterOptions(chunksize = 1e+07, maxmemory = 1e+08, tmptime = 24, 
               progress = "text", timer = TRUE, overwrite = TRUE, datatype = "INT2S")
-Number_of_Trees <- 1000
+Number_of_Trees <- 100
 img <- "smooth_stnl2UG19_7band.tif" #input multiband image
 img <- stack(img) 
 Output_img <- "ug500_stnl2lc19_1v6.tif" #Output classification

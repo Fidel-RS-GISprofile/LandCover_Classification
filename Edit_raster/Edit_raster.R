@@ -14,12 +14,16 @@ library(tiff)
 # Working directory 
 workdir <- "C:/Users/F1User/Desktop/work/"
 setwd(workdir); getwd()
+tmp_dir         <- "tmp/" # Auto create a tmp directory
+if (!dir.exists(tmp_dir))
+  dir.create(tmp_dir) 
 
 # Load images
-img_LULC      <- "editedTest.tif"
+img_LULC      <- "progress/lc2019UGA_500mBuffer.tif"
 img_LULC      <- raster(img_LULC)
-img_Edited    <- "editedTest1.tif"
-EditClass_msk <- "edward.tif"
+img_Edited    <- "lc2019UGA_500mBuffer_Edit1.tif"
+
+EditClass_msk <- "editDEMO/12to9.tif"
 EditClass_msk <- raster(EditClass_msk)
 
 # Assign class areas in Landcover to corresponding edit classes in the mask 
@@ -35,7 +39,7 @@ img_LULC[EditClass_msk == 8 ] <- as.integer(8) # Edit class 8_Wetland
 img_LULC[EditClass_msk == 9 ] <- as.integer(9) # Edit class 9_Subsistence Farmland
 img_LULC[EditClass_msk == 10 ] <- as.integer(10) # Edit class 10_Commercial Farmland
 img_LULC[EditClass_msk == 11 ] <- as.integer(11) # Edit class 11_Built_up
-img_LULC[EditClass_msk == 12 ] <- as.integer(12) # Edit class 12_Water
+img_LULC[EditClass_msk == 12 ] <- as.integer(9) # Edit class 12_Water
 img_LULC[EditClass_msk == 13 ] <- as.integer(13) # Edit class 13_Impediment
 
 # Save edited raster

@@ -110,7 +110,7 @@ cat("Starting to calculate random forest object \n)")
 randfor <- randomForest(as.factor(response_no_na$response) ~. , 
                         data=train_no_na[,-1], 
                         ntree=100, mtry=3,
-                        proximity=TRUE)
+                        proximity=TRUE, importance=T)
 
 ############ WRITE THE OUTPUT RASTER; ##############################################
 # Reload the raster package.
