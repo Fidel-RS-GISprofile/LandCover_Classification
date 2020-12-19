@@ -1,6 +1,6 @@
 ################### UNSUPERVISED CLASSIFICATION FOR Stnl 2 ###################################
 #Created on July 17, 2020
-#By: Fidel UWizeye; FAO_Uganda
+# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 
 rm(list = ls()); cat("\014") #Clear environment
 

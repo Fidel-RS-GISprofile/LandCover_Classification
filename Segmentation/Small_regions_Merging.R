@@ -1,6 +1,6 @@
 ################### SMALL REGIONS MERGED USING OTB ############################
 # Date: August 17, 2020
-# Contact: Fidel UWizeye; FAO_Uganda; fidel.uwizeye@fao.org/fideluwizeye@gmail.com
+# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 
 # This script is better for implementing minmum mapable area in OTB(smallRegionsMerging)
 # NOTE: TO RUN OTB (orfeo toolbox) IN COMMAND Line *OTB MUST BE INSTALLED on the system 

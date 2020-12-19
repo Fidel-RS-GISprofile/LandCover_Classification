@@ -1,6 +1,6 @@
 #################### SUPERVISED CLASSIFICATION RANDOM FOREST #########################
 ##########-Adopted from GWA_toolbox
-##########-Contact: Fidel UWizeye; FAO; fidel.uwizeye@fao.org;fideluwizeye@gmail.com
+##########-Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 # This script is better for classification of large sentinel 2 files
 
 ################################# CLEAR ENVIRONMENT AND CONSOLE ######################

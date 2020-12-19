@@ -1,6 +1,6 @@
 ############################# OBIA- SEGMENT CLASSIFICATION #########################
 # SCRIPT adopted from: Ned Horning[horning@amnh.org] & Wayne Walker[wwalker@whrc.org]
-# Edited2020 by: Fidel UWizeye; FAO; fidel.uwizeye@fao.org;fideluwizeye@gmail.com
+# Edited2020 by: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 # This script is better for classification of large sentinel 2 files OBIA
 
 ############ CLEAR THE ENV & CONSOLE; ##############################################

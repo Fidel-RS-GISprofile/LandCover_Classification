@@ -1,6 +1,6 @@
 #################***Reclassify values of a Raster***################################
 # ***--- Created on 22nd July 2020
-# ***--- Author: Fidel UWizeye; FAO_Uganda
+# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 
 # Clear console and the environment
 rm(list = ls()); cat("\014")

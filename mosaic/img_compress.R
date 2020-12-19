@@ -1,6 +1,6 @@
 #################***COMPRESS COUNTRY WIDE SENTINEL2 LARGE FILES***################################
 # ***--- Created on 28th March 2020
-# ***--- Contact: Fidel UWizeye; FAO_Uganda FAO; fidel.uwizeye@fao.org;fideluwizeye@gmail.com
+# ***--- Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
 
 rm(list = ls()); cat("\014") # clear environment
 
