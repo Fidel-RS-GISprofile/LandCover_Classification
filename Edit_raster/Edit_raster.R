@@ -1,8 +1,8 @@
 ################## EDIT RASTER USING A MASK LAYER #########################
-# Contact: Fidel UWizeye; FAO; fidel.uwizeye@fao.org;fideluwizeye@gmail.com
+# Contact: fidel.uwizeye@fao.org;fideluwizeye@gmail.com
 # This script uses a mask layer to edit a land cover layer 
 
-############ Clear console and the environment
+# Clear console and the environment
 rm(list = ls()); cat("\014")
 
 # Load library
