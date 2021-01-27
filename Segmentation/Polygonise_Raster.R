@@ -1,5 +1,5 @@
 ############################# EXTRACT SPECTRAL SIGNATURE ON THE SEGMENTS #############
-##########-Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+##########-Contact: fideluwizeye@gmail.com
 # This script is better for calculating segment statistics (avg & sdv) sentinel 2
 
 ############ CLEAR THE ENV & CONSOLE; #################################################

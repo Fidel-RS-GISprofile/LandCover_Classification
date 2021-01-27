@@ -1,7 +1,7 @@
 #####################################################################################################
 # ***--- Adopted from: remi.dannunzio@fao.org; 2017/11/02
 # ***--- Edited_By: Fidel UWizeye; FAO_Uganda
-# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# Contact: fideluwizeye@gmail.com
 # ***--- Objective: This script is used to implement OTB segmentation algorithm in R. 
 ########## OTB must be installed on your system #####################################################
 rm(list = ls()); cat("\014"); options(stringsAsFactors=FALSE)# Read external files with TEXT as TEXT

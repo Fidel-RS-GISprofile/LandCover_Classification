@@ -1,6 +1,6 @@
 #THIS SCRIPT EXTRACTS INDIVIDUAL BANDS FROM A MOSAIC 
 # ***--- Created on 28th March 2020
-# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# Contact: fideluwizeye@gmail.com
 
 rm(list = ls()); cat("\014") #Clear environment
 #

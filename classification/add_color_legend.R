@@ -1,5 +1,5 @@
 ############ ADD UGA COLOR LEGEND #########################################
-# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# Contact: fideluwizeye@gmail.com
 # This script adds a color legend to a single band raster layer
 
 # Clear console and the environment

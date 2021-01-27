@@ -1,6 +1,6 @@
 ############################# CREATE A MULTI BAND RASTER FROM SINGLE BANDS #############
 # ***--- Created on 28th March 2020
-# ***--- Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# ***--- Contact: fideluwizeye@gmail.com
 
 rm(list = ls()); cat("\014") #Clear the environment
 

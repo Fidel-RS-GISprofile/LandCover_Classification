@@ -1,5 +1,5 @@
 ############################# MERGE TILES #############
-##########-Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+##########-Contact: fideluwizeye@gmail.com
 # This script is better for merging single band rasters
 
 ############ CLEAR THE ENV & CONSOLE; #################################################

@@ -1,7 +1,7 @@
 ################### CLUMP RASTER ######################## 2020
 ######### Recategorizes data in a raster map by grouping cells 
 ######### that form physically discrete areas into unique categories.
-# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# Contact: fideluwizeye@gmail.com
 
 #################### CLEAR ENVIRONMENT AND CONSOLE ###########################
 rm(list = ls()); cat("\014"); options(stringsAsFactors=FALSE)

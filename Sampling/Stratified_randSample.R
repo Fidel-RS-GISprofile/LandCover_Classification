@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 #Created on Wed Mar 08 12:55:41 2020
 #Adopted from: GWA_toolbox 
-#Edited: Fidel UWizeye
 #Object: Perfom a stratified random sampling from a classified map
 # Strata are the integer numbers of the classified map
 # NA values are ignored ////the final product has not .prj file

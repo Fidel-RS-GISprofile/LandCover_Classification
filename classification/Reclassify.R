@@ -1,6 +1,6 @@
 #################***Reclassify values of a Raster***################################
 # ***--- Created on 22nd July 2020
-# Contact: fidel.uwizeye@fao.org or fideluwizeye@gmail.com
+# Contact: fideluwizeye@gmail.com
 
 # Clear console and the environment
 rm(list = ls()); cat("\014")
@@ -11,13 +11,13 @@ library(rgeos)
 library(rgdal)
 
 # Working directory
-workdir          <- "E:/tmp_aug2020/"
+workdir          <- "C:/Users/F1User/Desktop/work/classfn_test/"
 setwd(workdir); getwd()
 
 # Load images
-img              <- "segClass_lulc2019.tif"
+img              <- "obia1.tif"
 img              <- raster(img)
-img_out          <- "segClass_lulc2019_3.tif"
+img_out          <- "obia_reclass.tif"
 
 #summary of the statistics of the raster
 summary(img)
