@@ -6,14 +6,14 @@
 rm(list = ls()); cat("\014"); options(stringsAsFactors = FALSE)#read txt as txt
 
 # Working directory
-workdir <- "~/lc_mapping2019fdl/data/"
+workdir <- "~/data/"
 setwd(workdir); getwd()
 
 # Load Data
 mosaic_file           <- "smooth_mosaic_.tif"
 segment_tif           <- "segments/seg_lsms_200_50_clump.tif"
 segtVals_txt          <- "tmp/tmp_segStat"
-segtVals_csv          <- "segment_Stat/segStat.csv"
+segtVals_csv          <- "segments/segStat.csv"
 
 cat("!Start process at", format(Sys.time(), "%H:%M:%OS2"), "\n")
 ################### PROCESS - EXTRACT SPECTRAL SIGNATURE ON THE SEGMENTS ############

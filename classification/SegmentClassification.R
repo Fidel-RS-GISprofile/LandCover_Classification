@@ -33,9 +33,6 @@ segImage        <- "segments/seg_lsms_200_50_clump.tif"; nd <- 0
 # Name and location of the classified image & Output classification 
 # (enter TRUE or FALSE)
 outImage <- "segments/segClass_lulc2019.tif"; classImage <- TRUE
-# Output CSV file with class mapping information. If this output is not needed 
-# you can enter two double or single-quotes (ââ or '')
-outClassMapCSV <- "segment_Stat/Editable_class.csv"
 
 # Data set name for the vector file containing training data. 
 # & Enter EITHER the name (case sensitive and in quotes) or the column number of the 
@@ -147,11 +144,6 @@ for (i in 1:bs$n) {
 
 # Finish saving and close the connection to the image.
 img.out <- writeStop(img.out)
-
-# Output class mapping CSV file if a filename was provided for outClassMapCSV
-if (outClassMapCSV != "") {
-  write.csv(predValuesDF, file=outClassMapCSV, row.names=FALSE)
-}
 
 cat("!Process completed at", format(Sys.time(), "%H:%M:%OS2"), "\n")
 

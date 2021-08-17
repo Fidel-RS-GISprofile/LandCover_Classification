@@ -1,7 +1,7 @@
 ######## Segmentation and rasterization sentinel 2 for zonal AOI
 # Working directory
-workdir <- setwd("E:/R/obia/data/")
-mosaic_file_tif <-"mosaic/Nakasongola_area_2019/Nakasongola_area_2019.vrt"
+workdir <- setwd("E:/R/data/")
+mosaic_file_tif <-"mosaic/Nakasongola_area_2019.vrt"
 segment_file_shp <- "segments/segments1.shp"
 segment_file_tif <- "segments.tif"
 
