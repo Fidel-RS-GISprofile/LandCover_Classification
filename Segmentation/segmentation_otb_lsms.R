@@ -14,7 +14,7 @@ library(foreign)
 library(rgeos)
 library(glcm)
 
-workdir <- setwd("~/lc_mapping2019fdl/data/") #||Work directory
+workdir <- setwd("D:/files2021/WCS_lc2010/") #||Work directory
 tmpdir <- paste0(workdir,"/tmp/")
 if (!dir.exists(tmpdir)) 
   dir.create(tmpdir) #||Create a directory
@@ -28,7 +28,6 @@ segment_file <- "segments/tile1_segments.shp"
 segment_tif  <- "segments/tile1_segments.tif"
 scriptdir    <- "~/obia/scripts/"
 
-system(paste0(workdir,"/WCS_AOI_/WCS_AOI_ls7542010.tif")) #||Check access for the raster multiband file
 ## Start processing
 startTime <- Sys.time(); cat("Start time", format(startTime),"\n")
 #||PERFORM SEGMENTATION USING THE OTB-SEG ALGORITHM
@@ -39,7 +38,7 @@ params <- c(3, # radius of smoothing (pixels) ||3 for Landsat or 5 for Sentinel 
             10) # segment minimum size (pixels)||10=1hectare Landsat or 50=1/2hectare sentinel 2 UGA
 #||Apply KMEAN shift algorith to raster band to do clustering
 system(sprintf("otbcli_MeanShiftSmoothing -in %s -fout %s -foutpos %s -spatialr %s -ranger %s -thres %s -maxiter %s",
-               "ug500_2019ls8_5bands.tif",
+               "Merged_mosaicBands_2010.tif",
                paste0(tmpdir,"smooth_",paste0(params,collapse = "_"),".tif"),
                paste0(tmpdir,"tmp_position_",paste0(params,collapse = "_"),".tif"),
                params[1],

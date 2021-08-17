@@ -1,6 +1,4 @@
 #################***Reclassify values of a Raster***################################
-# ***--- Created on 22nd July 2020
-# Contact: fideluwizeye@gmail.com
 
 # Clear console and the environment
 rm(list = ls()); cat("\014")
@@ -11,32 +9,36 @@ library(rgeos)
 library(rgdal)
 
 # Working directory
-workdir          <- "C:/Users/F1User/Desktop/work/classfn_test/"
+workdir          <- "C:/Users/F1User/Desktop/work/LC19_FINAL_Report/editWETLANDS/"
 setwd(workdir); getwd()
 
+# Define raster options
+rasterOptions(datatype = 'INT1U', progress = 'window', 
+              timer = T, chunksize = 1e+07,
+              maxmemory = 1e+08, tmptime = 24)
 # Load images
-img              <- "obia1.tif"
+img              <- "Sieve_10pxClass2019.tif"
 img              <- raster(img)
-img_out          <- "obia_reclass.tif"
+img_out          <- "BuiltreclassPX12.tif"
 
 #summary of the statistics of the raster
 summary(img)
 
 #map raster value to new values using a matrix
-reclass_df <- c(0,0,
+reclass_df <- c(0, 0,
                 1, 1,
-                6, 2,
-                7, 3,
-                8, 4,
-                9, 5,
-                10, 6,
-                11, 7,
-                12, 8,
-                13, 9,
-                2, 10,
-                3, 11,
-                4, 12,
-                5, 13)
+                2, 1,
+                3, 1,
+                4, 1,
+                5, 1,
+                6, 1,
+                7, 1,
+                8, 1,
+                9, 1,
+                10, 2,
+                11, 1,
+                12, 1,
+                13, 1)
 
 
 # reshape the object into a matrix with columns and rows

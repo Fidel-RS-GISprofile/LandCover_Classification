@@ -14,12 +14,12 @@ workdir <- "C:/Users/F1User/Desktop/work/editMask_19/"
 setwd(workdir); getwd()
 
 # Load images
-img_LULC      <- "lulc2019_baseV1edit83.tif"
+img_LULC      <- "lulc2019_baseV1edit87.tif"
 img_LULC      <- raster(img_LULC)
-img_Edited    <- "lulc2019_baseV1edit84.tif"
+img_Edited    <- "lulc2019_ibaseV1edit87.tif"
 
 # Load mask layer(s)
-EditClass_msk <- "3to5_1.tif"
+EditClass_msk <- "10to5.tif"
 EditClass_msk <- raster(EditClass_msk)
 EditClass_msk1 <- "3to3.tif"
 EditClass_msk1 <- raster(EditClass_msk1)
@@ -42,14 +42,13 @@ img_LULC[EditClass_msk == 5 ] <- as.integer(5) # Edit class 5_Woodland
 img_LULC[EditClass_msk == 6 ] <- as.integer(6) # Edit class 6_Bushland
 img_LULC[EditClass_msk == 7 ] <- as.integer(7) # Edit class 7_Grassland
 img_LULC[EditClass_msk == 8 ] <- as.integer(8) # Edit class 8_Wetland
-img_LULC[EditClass_msk == 9 ] <- as.integer(9) # Edit class 9_Subsistence Farmland
-img_LULC[EditClass_msk == 10 ] <- as.integer(10) # Edit class 10_Commercial Farmland
+img_LULC[EditClass_msk == 9 ] <- as.integer(7) # Edit class 9_Subsistence Farmland
+img_LULC[EditClass_msk == 10 ] <- as.integer(5) # Edit class 10_Commercial Farmland
 img_LULC[EditClass_msk == 11 ] <- as.integer(11) # Edit class 11_Built_up
 img_LULC[EditClass_msk == 12 ] <- as.integer(9) # Edit class 12_Water
 img_LULC[EditClass_msk == 13 ] <- as.integer(13) # Edit class 13_Impediment
 
 # Save edited raster
-writeRaster(img_LULC, img_Edited)
-print("*******Writing raster complete******")
-removeTmpFiles(h=0)
+writeRaster(img_LULC, img_Edited, datatype = 'INT1U')
+removeTmpFiles(h=1)
 print("*********COMPLETE**********")

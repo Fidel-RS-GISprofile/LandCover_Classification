@@ -1,12 +1,11 @@
 ############################# MERGE TILES #############
-##########-Contact: fideluwizeye@gmail.com
 # This script is better for merging single band rasters
 
 ############ CLEAR THE ENV & CONSOLE; #################################################
 rm(list = ls()); cat("\014"); options(stringsAsFactors = FALSE)#read txt as txt
 
 # Working directory
-workdir <- "E:/tmp_aug2020/"
+workdir <- "~/WorkingDirectory/"
 setwd(workdir); getwd()
 
 # Load imaged
